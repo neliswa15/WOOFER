@@ -1,0 +1,107 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:padding="16dp"
+        android:background="?attr/colorPrimary">
+        <TextView
+            android:id="@+id/SavedPost"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:text="SavedPosts"
+            android:textColor="@android:color/white"
+            android:textSize="36sp"
+            android:textStyle="bold"/>
+        <ImageButton
+            android:id="@+id/exit"
+            android:layout_width="175dp"
+            android:layout_height="72dp"
+            android:layout_alignParentEnd="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/segment"
+            android:contentDescription="Exit Settings" />
+    </RelativeLayout>
+    <ScrollView
+        android:id="@+id/scrollableContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar"
+        android:layout_above="@+id/bottomNavBar"
+        android:fillViewport="true"
+        android:background="#620DEA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!-- i need clarrification on what i can add here -->
+    </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/bottomNavBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="?attr/colorPrimary"
+        android:weightSum="50"
+        android:elevation="4dp">
+
+        <ImageButton
+            android:id="@+id/homeButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:src="@drawable/home"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Home"
+            android:scaleType="centerInside" />
+
+        <ImageButton
+            android:id="@+id/bookmarkButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:src="@drawable/bookmark"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Bookmarks"
+            android:scaleType="centerInside" />
+
+        <ImageButton
+            android:id="@+id/addPostButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:src="@drawable/add"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Add Post"
+            android:scaleType="centerInside" />
+
+        <ImageButton
+            android:id="@+id/inboxButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:src="@drawable/inbox"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Inbox"
+            android:scaleType="centerInside" />
+
+        <ImageButton
+            android:id="@+id/settingsButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:src="@drawable/settings"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Settings"
+            android:scaleType="centerInside" />
+    </LinearLayout>
+
+</RelativeLayout>
