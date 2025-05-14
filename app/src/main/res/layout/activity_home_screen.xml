@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4D4365"
+    tools:context=".HomeScreen">
+
+    <LinearLayout
+        android:id="@+id/NavigationBar"
+        android:layout_width="0dp"
+        android:layout_height="57dp"
+        android:layout_alignParentBottom="true"
+        android:background="#9C17FF"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="50"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Nav Buttons -->
+
+        <ImageButton
+            android:id="@+id/btnHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Home"
+            android:scaleType="centerInside"
+            android:src="@drawable/homeicon" />
+
+        <ImageButton
+            android:id="@+id/btnBookmark"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Bookmarks"
+            android:scaleType="centerInside"
+            android:src="@drawable/bookmarkblack" />
+
+        <ImageButton
+            android:id="@+id/btnNewPost"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Add Post"
+            android:scaleType="centerInside"
+            android:src="@drawable/newpost" />
+
+        <ImageButton
+            android:id="@+id/btnInbox"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Inbox"
+            android:scaleType="centerInside"
+            android:src="@drawable/inboxicon" />
+
+        <ImageButton
+            android:id="@+id/btnSettings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Settings"
+            android:scaleType="centerInside"
+            android:src="@drawable/defaultprofilepic" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/TopBox"
+        android:layout_width="0dp"
+        android:layout_height="111dp"
+        android:background="#9C17FF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.001">
+
+        <EditText
+            android:id="@+id/edtSearchFriends"
+            android:layout_width="0dp"
+            android:layout_height="49dp"
+            android:layout_marginEnd="150dp"
+            android:background="#000000"
+            android:ems="10"
+            android:hint="Search For Your Friends..."
+            android:inputType="text"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#6F6F6F"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageButton
+            android:id="@+id/bmbSearch"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="4dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/edtSearchFriends"
+            app:srcCompat="@drawable/blacksearch" />
+
+        <TextView
+            android:id="@+id/WooferTitle"
+            android:layout_width="198dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="4dp"
+            android:text="Woofer"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#070707"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/bmbFilterPosts"
+            android:layout_width="61dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Filter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/bmbSearch"
+            app:srcCompat="@drawable/filtericon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/MainFeed"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintBottom_toTopOf="@+id/NavigationBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TopBox">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
