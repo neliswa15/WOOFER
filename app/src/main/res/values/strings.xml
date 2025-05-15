@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Woofer</string>
+    <string name="app_name">Woofer</string>
+    <string name="title">Woofer</string>
+    <string name="user_id">UserID</string>
+    <string name="user_name">UserName</string>
+    <string name="send_friend_request">Send Friend Request</string>
+    <string name="message">Message</string>
+    <string name="posts">Posts</string>
+    <string name="friends">Friends</string>
+    <string name="username_john">John</string>
+    <string name="sample_post">blah blah blah blah blah...</string>
+    <string name="date_sample">12/12/2012</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
 </resources>
