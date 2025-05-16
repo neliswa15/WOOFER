@@ -34,13 +34,193 @@
         android:layout_above="@+id/bottomNavBar"
         android:fillViewport="true"
         android:background="#620DEA">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <!-- i need clarrification on what i can add here -->
-    </LinearLayout>
+            <!-- Sample Post -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:background="#8E8E8E" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background=""
+                android:layout_marginBottom="8dp">
+                <!-- Post Header -->
+                <RelativeLayout
+                    android:id="@+id/postheader"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:padding="16dp"
+                    android:background="">
+
+                    <ImageView
+                        android:id="@+id/profileImage"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:layout_alignParentStart="true"
+                        android:src="@drawable/user"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="ProfilePicture" />
+
+                    <TextView
+                        android:id="@+id/username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/profileImage"
+                        android:layout_alignBottom="@id/profileImage"
+                        android:layout_marginStart="16dp"
+                        android:text="UserName"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+                <!-- Image Post -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/profile_placeholder"/>
+
+                <!-- Post Actions -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#8E8E8E" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:gravity="center_vertical">
+
+                    <!-- Like -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/like" />
+                        <TextView
+                            android:id="@+id/likeCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <!-- Comment -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/comment" />
+                        <TextView
+                            android:id="@+id/commentCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <!-- Share -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/share" />
+                        <TextView
+                            android:id="@+id/shareCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <!-- Bookmark  -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/bookmark_post" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+
+                <!--Post Caption -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#8E8E8E" />
+
+                <TextView
+                    android:id="@+id/caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sample post caption to show how it would look like in the feed."
+                    android:textColor="@android:color/white"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:paddingBottom="8dp"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#8E8E8E" />
+
+
+                <!-- Post Time -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5 MINS AGO"
+                    android:textSize="10sp"
+                    android:textColor="#8E8E8E"
+                    android:paddingStart="12dp"
+                    android:paddingBottom="4dp"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="#8E8E8E" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
     </ScrollView>
     <LinearLayout
         android:id="@+id/bottomNavBar"

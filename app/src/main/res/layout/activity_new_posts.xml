@@ -61,7 +61,7 @@
             </LinearLayout>
 
             <EditText
-                android:id="@+id/postInputField"
+                android:id="@+id/postInput"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_margin="16dp"

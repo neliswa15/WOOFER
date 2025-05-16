@@ -57,7 +57,10 @@
             android:orientation="vertical">
 
 
-
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:background="#8E8E8E" />
             <!-- Notifications Header -->
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -78,7 +81,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#B0BEC5" />
+                android:background="#8E8E8E" />
 
             <!-- Notification Settings Section -->
             <LinearLayout
