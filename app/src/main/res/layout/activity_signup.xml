@@ -7,117 +7,117 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:padding="24dp"
-        android:gravity="center_horizontal">
+        android:padding="24dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="#D000F3"
-            android:padding="20dp"
             android:layout_marginTop="40dp"
-            android:elevation="6dp">
+            android:background="#D000F3"
+            android:elevation="6dp"
+            android:orientation="vertical"
+            android:padding="20dp">
 
             <!-- Title -->
             <TextView
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/title"
-                android:textSize="28sp"
-                android:textStyle="bold"
-                android:textColor="#9A00D6"
                 android:layout_gravity="center_horizontal"
-                android:paddingBottom="16dp" />
+                android:paddingBottom="16dp"
+                android:text="@string/title"
+                android:textColor="#9A00D6"
+                android:textSize="28sp"
+                android:textStyle="bold" />
 
             <!-- User ID -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:labelFor="@id/userId"
                 android:text="@string/user_id"
                 android:textColor="#5A2D82"
-                android:textStyle="bold"
-                android:labelFor="@id/userId" />
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/userId"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:autofillHints="username"
                 android:background="#000"
-                android:textColor="#fff"
                 android:hint="@string/user_id"
-                android:autofillHints="username" />
+                android:textColor="#fff" />
 
             <!-- User Name -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:labelFor="@id/userName"
                 android:text="@string/user_name"
                 android:textColor="#5A2D82"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp"
-                android:labelFor="@id/userName" />
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/userName"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:autofillHints="name"
                 android:background="#000"
-                android:textColor="#fff"
                 android:hint="@string/user_name"
-                android:autofillHints="name" />
+                android:textColor="#fff" />
 
             <!-- Email -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:labelFor="@id/email"
                 android:text="@string/email"
                 android:textColor="#5A2D82"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp"
-                android:labelFor="@id/email" />
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:autofillHints="emailAddress"
                 android:background="#000"
-                android:textColor="#fff"
                 android:hint="@string/email"
                 android:inputType="textEmailAddress"
-                android:autofillHints="emailAddress" />
+                android:textColor="#fff" />
 
             <!-- Password -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:labelFor="@id/password"
                 android:text="@string/password"
                 android:textColor="#5A2D82"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp"
-                android:labelFor="@id/password" />
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:autofillHints="password"
                 android:background="#000"
-                android:textColor="#fff"
                 android:hint="@string/password"
                 android:inputType="textPassword"
-                android:autofillHints="password" />
+                android:textColor="#fff" />
 
             <!-- Sign In Button -->
             <Button
                 android:id="@+id/signInButton"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:text="@string/sign_in"
-                android:textColor="#D000F3"
+                android:layout_marginTop="20dp"
                 android:background="#000"
-                android:layout_marginTop="20dp" />
+                android:text="@string/sign_in"
+                android:textColor="#D000F3" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
