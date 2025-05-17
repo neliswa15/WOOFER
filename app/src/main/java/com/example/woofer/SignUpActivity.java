@@ -24,7 +24,7 @@ public class SignUpActivity extends AppCompatActivity {
         usernameInput = findViewById(R.id.userName);
         emailInput = findViewById(R.id.email);
         passwordInput = findViewById(R.id.password);
-        signUpButton = findViewById(R.id.signUpButton);
+        signUpButton = findViewById(R.id.signInButton);
 
 
 
@@ -36,12 +36,13 @@ public class SignUpActivity extends AppCompatActivity {
                 String username = usernameInput.getText().toString();
                 String password = passwordInput.getText().toString();
                 String name = nameInput.getText().toString();
-
+                String userid = nameInput.getText().toString();
                 Intent intent = new Intent(SignUpActivity.this, EmailVerificationActivity.class);
                 intent.putExtra("email", email);
                 intent.putExtra("name", name);
                 intent.putExtra("username", username);
                 intent.putExtra("password", password);
+                intent.putExtra("userid", userid);
                 startActivity(intent);
             }
         });
