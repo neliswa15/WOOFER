@@ -1,4 +1,4 @@
-//This file will transfer all the inputs into the EmailVerification activity
+//This file will transfer all the inputs into the EmailVerification activity.
 
 package com.example.woofer;
 
@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    EditText emailInput, usernameInput, passwordInput;
+    EditText emailInput, usernameInput, passwordInput, nameInput;
     Button signUpButton;
 
     @Override
@@ -20,23 +20,26 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         // GUI Elements
-        emailInput = findViewById(R.id.userId);
+        nameInput = findViewById(R.id.userId);
         usernameInput = findViewById(R.id.userName);
+        emailInput = findViewById(R.id.email);
         passwordInput = findViewById(R.id.password);
         signUpButton = findViewById(R.id.signUpButton);
 
 
 
-        // Button to SIGN UP and passes variables email, username, and password to EmailVerificationActivity.java to be added to the Users table
+        // Button to SIGN UP
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String email = emailInput.getText().toString();
                 String username = usernameInput.getText().toString();
                 String password = passwordInput.getText().toString();
+                String name = nameInput.getText().toString();
 
                 Intent intent = new Intent(SignUpActivity.this, EmailVerificationActivity.class);
                 intent.putExtra("email", email);
+                intent.putExtra("name", name);
                 intent.putExtra("username", username);
                 intent.putExtra("password", password);
                 startActivity(intent);
