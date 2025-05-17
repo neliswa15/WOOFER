@@ -1,3 +1,5 @@
+//This file will transfer all the inputs into the EmailVerification activity
+
 package com.example.woofer;
 
 import android.content.Intent;
@@ -25,7 +27,7 @@ public class SignUpActivity extends AppCompatActivity {
 
 
 
-        // Button to SIGN UP
+        // Button to SIGN UP and passes variables email, username, and password to EmailVerificationActivity.java to be added to the Users table
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
