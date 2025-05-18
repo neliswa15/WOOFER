@@ -1,5 +1,6 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -81,6 +82,19 @@
                 android:text="Choose Image"
                 android:backgroundTint="@color/white"
                 android:textColor="#620DEA" />
+            <!-- this option appears when a user chooses to select an image-->
+            <EditText
+                android:id="@+id/imageCaptionInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="8dp"
+                android:hint="Write a caption..."
+                android:visibility="gone"
+                android:inputType="text"
+                android:textColor="@android:color/white"
+                android:textColorHint="#BBBBBB"/>
+
 
             <ImageView
                 android:id="@+id/selectedImage"
