@@ -1,92 +1,123 @@
-//This file will transfer all the inputs into the EmailVerification activity.
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#5A2D82">
 
-package com.example.myapplication;
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#D000F3"
+            android:padding="20dp"
+            android:layout_marginTop="40dp"
+            android:elevation="6dp">
 
-public class SignUpActivity extends AppCompatActivity {
+            <!-- Title -->
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="#9A00D6"
+                android:layout_gravity="center_horizontal"
+                android:paddingBottom="16dp" />
 
-    EditText emailInput, usernameInput, passwordInput, nameInput;
-    Button signUpButton;
+            <!-- Display name -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/displayName"
+                android:textColor="#5A2D82"
+                android:textStyle="bold"
+                android:labelFor="@id/fullName" />
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
-        // GUI Elements
-        nameInput = findViewById(R.id.fullName);
-        usernameInput = findViewById(R.id.userID);
-        emailInput = findViewById(R.id.email);
-        passwordInput = findViewById(R.id.password);
-        signUpButton = findViewById(R.id.signUpButton);
+            <EditText
+                android:id="@+id/fullName"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#000"
+                android:textColor="#fff"
+                android:hint="@string/displayName"
+                android:autofillHints="Full name" />
 
+            <!-- User Name -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/userID"
+                android:textColor="#5A2D82"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:labelFor="@id/userName" />
 
+            <EditText
+                android:id="@+id/userID"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#000"
+                android:textColor="#fff"
+                android:hint="@string/userID"
+                android:autofillHints="name" />
 
-        // Button to SIGN UP
-        signUpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String email = emailInput.getText().toString();
-                String userId = usernameInput.getText().toString();
-                String password = passwordInput.getText().toString();
-                String name = nameInput.getText().toString();
-                // Validation
-                if (!isValidName(name)) {
-                    nameInput.setError("Name at least 2 letters, only letters and spaces)");
-                    return;
-                }
+            <!-- Email -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/email"
+                android:textColor="#5A2D82"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:labelFor="@id/email" />
 
-                if (!isValidUsername(userId)) {
-                    usernameInput.setError("UserID must be 5-20 characters (letters or numbers)");
-                    return;
-                }
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#000"
+                android:textColor="#fff"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:autofillHints="emailAddress" />
 
-                if (!isValidEmail(email)) {
-                    emailInput.setError("Invalid email address");
-                    return;
-                }
+            <!-- Password -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/password"
+                android:textColor="#5A2D82"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:labelFor="@id/password" />
 
-                if (!isValidPassword(password)) {
-                    passwordInput.setError("Password must be 8+ characters and include uppercase, lowercase, number, and a special character");
-                    return;
-                }
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#000"
+                android:textColor="#fff"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:autofillHints="password" />
 
-
-                Intent intent = new Intent(SignUpActivity.this, EmailVerificationActivity.class);
-
-                Toast.makeText(SignUpActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
-                intent.putExtra("email", email);
-                intent.putExtra("name", name);
-                intent.putExtra("userID", userId);
-                intent.putExtra("password", password);
-
-                startActivity(intent);
-            }
-        });
-
-    }
-
-    //Methods for validation
-    public boolean isValidEmail(String email) {
-        return email != null && email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
-    }
-
-    public boolean isValidUsername(String username) {
-        return username != null && username.matches("^[a-zA-Z0-9]{5,20}$");
-    }
-
-    public boolean isValidPassword(String password) {
-        return password != null && password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=!]).{8,}$");
-    }
-
-    public boolean isValidName(String name) {
-        return name != null && name.matches("^[A-Za-z ]{2,}$");
-    }
-}
-
+            <!-- Sign In Button -->
+            <Button
+                android:id="@+id/signUpButton"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="@string/sign_up"
+                android:textColor="#D000F3"
+                android:background="#000"
+                android:layout_marginTop="20dp" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
