@@ -20,7 +20,7 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         // GUI Elements
-        nameInput = findViewById(R.id.userId);
+        nameInput = findViewById(R.id.fullName);
         usernameInput = findViewById(R.id.userName);
         emailInput = findViewById(R.id.email);
         passwordInput = findViewById(R.id.password);
