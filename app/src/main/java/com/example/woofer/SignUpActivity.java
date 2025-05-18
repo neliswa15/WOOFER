@@ -33,7 +33,7 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String email = emailInput.getText().toString();
-                String username = usernameInput.getText().toString();
+                String userId = usernameInput.getText().toString();
                 String password = passwordInput.getText().toString();
                 String name = nameInput.getText().toString();
                 // Validation
@@ -42,7 +42,7 @@ public class SignUpActivity extends AppCompatActivity {
                     return;
                 }
 
-                if (!isValidUsername(username)) {
+                if (!isValidUsername(userId)) {
                     usernameInput.setError("UserID must be 5-20 characters (letters or numbers)");
                     return;
                 }
@@ -63,7 +63,7 @@ public class SignUpActivity extends AppCompatActivity {
                 Toast.makeText(SignUpActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
                 intent.putExtra("email", email);
                 intent.putExtra("name", name);
-                intent.putExtra("userID", username);
+                intent.putExtra("userID", userId);
                 intent.putExtra("password", password);
 
                 startActivity(intent);
