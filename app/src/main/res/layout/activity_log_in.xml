@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4D4365"
-    tools:context=".Login">
+    tools:context=".LogInActivity">
 
     <TextView
         android:id="@+id/Title"
@@ -49,7 +49,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/userText"
+            android:id="@+id/PasswordTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="33dp"
@@ -59,21 +59,22 @@
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtCode" />
+            app:layout_constraintTop_toBottomOf="@+id/userID" />
 
         <TextView
-            android:id="@+id/ForgotPassw"
+            android:id="@+id/ForgotPassword"
             android:layout_width="217dp"
             android:layout_height="30dp"
             android:layout_marginStart="33dp"
             android:text="Forgot Password?"
             android:textColor="#000000"
             android:textSize="16sp"
+            android:clickable="true"
+            android:focusable="true"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
+            app:layout_constraintTop_toBottomOf="@+id/password" />
 
         <TextView
-            android:id="@+id/EmailTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="33dp"
@@ -86,7 +87,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/edtCode"
+            android:id="@+id/userID"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_marginStart="33dp"
@@ -104,7 +105,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/edtPassword"
+            android:id="@+id/password"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_marginStart="33dp"
@@ -118,10 +119,10 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/userText" />
+            app:layout_constraintTop_toBottomOf="@+id/PasswordTextView" />
 
         <Button
-            android:id="@+id/btnVerify"
+            android:id="@+id/verifyButton"
             android:layout_width="0dp"
             android:layout_height="54dp"
             android:layout_marginStart="22dp"
