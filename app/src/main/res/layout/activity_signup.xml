@@ -47,7 +47,7 @@
                 android:layout_height="48dp"
                 android:background="#000"
                 android:textColor="#fff"
-                android:hint="@string/user_id"
+                android:hint="@string/name"
                 android:autofillHints="username" />
 
             <!-- User Name -->
