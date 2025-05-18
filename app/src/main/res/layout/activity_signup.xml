@@ -32,23 +32,23 @@
                 android:layout_gravity="center_horizontal"
                 android:paddingBottom="16dp" />
 
-            <!-- User ID -->
+            <!-- Display name -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/name"
+                android:text="@string/displayName"
                 android:textColor="#5A2D82"
                 android:textStyle="bold"
-                android:labelFor="@id/userId" />
+                android:labelFor="@id/fullName" />
 
             <EditText
-                android:id="@+id/userId"
+                android:id="@+id/fullName"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:background="#000"
                 android:textColor="#fff"
-                android:hint="@string/name"
-                android:autofillHints="username" />
+                android:hint="@string/displayName"
+                android:autofillHints="Full name" />
 
             <!-- User Name -->
             <TextView
