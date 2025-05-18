@@ -18,7 +18,7 @@ public class EmailVerificationActivity extends AppCompatActivity {
         String username = getIntent().getStringExtra("username");
         String password = getIntent().getStringExtra("password");
         String name = getIntent().getStringExtra("name");
-        
+        String userid = getIntent().getStringExtra("userid");
 
         
         super.onCreate(savedInstanceState);
